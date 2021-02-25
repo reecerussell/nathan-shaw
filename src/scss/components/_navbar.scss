@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  position: relative;
 
   .ns-portfolio {
     margin: 0;
@@ -10,15 +12,19 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 32px;
+    z-index: 10;
   }
 
   .ns-nav-items {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex: 1 1;
-    justify-self: center;
     text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: none;
 
     .ns-nav-item {
       display: inline-block;
@@ -64,6 +70,7 @@
     background: none;
     width: 50px;
     padding: 10px 0 10px 10px;
+    z-index: 100;
 
     .ns-menu-line {
       display: block;
@@ -103,5 +110,11 @@
       margin-right: -10px;
       width: 60px;
     }
+  }
+}
+
+@media (min-width: 1250px) {
+  .ns-navbar .ns-nav-items {
+    display: block;
   }
 }

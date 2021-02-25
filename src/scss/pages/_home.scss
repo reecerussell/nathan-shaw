@@ -1,9 +1,9 @@
 .ns-home {
   background-color: #000;
-  background-image: url(../../../public/assets/landing_background.png);
+  background-image: url(../../../public/assets/landing_background_small.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position-y: 100px;
   padding: 25px;
   width: calc(100% - 50px);
   min-height: calc(100vh - 50px);
@@ -18,7 +18,7 @@
 
   .ns-info {
     flex: 1;
-    padding-top: 25vh;
+    padding-top: 5vh;
 
     .ns-header {
       font-family: 'Montserrat', sans-serif;
@@ -26,7 +26,7 @@
       color: $text-light;
       margin: 0;
       display: block;
-      font-size: 70px;
+      font-size: 40px;
     }
 
     .ns-subheader {
@@ -35,7 +35,7 @@
       color: darken($text-light, 40%);
       margin: 0;
       display: block;
-      font-size: 34px;
+      font-size: 26px;
     }
   }
 
@@ -72,6 +72,50 @@
 
       &:last-of-type {
         padding-right: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .ns-home {
+    background-position: top;
+
+    .ns-info {
+      .ns-header {
+        font-size: 50px;
+      }
+
+      .ns-subheader {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media (min-width: 660px) {
+  .ns-home {
+    background-image: url(../../../public/assets/landing_background_medium.png);
+
+    .ns-info {
+      padding-top: 20vh;
+    }
+  }
+}
+
+@media (min-width: 1050px) {
+  .ns-home {
+    background-image: url(../../../public/assets/landing_background.png);
+
+    .ns-info {
+      padding-top: 25vh;
+
+      .ns-header {
+        font-size: 70px;
+      }
+
+      .ns-subheader {
+        font-size: 34px;
       }
     }
   }
