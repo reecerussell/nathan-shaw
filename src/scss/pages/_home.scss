@@ -1,0 +1,90 @@
+.ns-home {
+  background-color: #000;
+  background-image: url(../../../public/assets/landing_background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  padding: 25px;
+  width: calc(100% - 50px);
+  min-height: calc(100vh - 50px);
+  max-height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-items: left;
+
+  .ns-navbar {
+    align-self: flex-start;
+  }
+
+  .ns-info {
+    flex: 1;
+    padding-top: 25vh;
+
+    .ns-header {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      color: $text-light;
+      margin: 0;
+      display: block;
+      font-size: 70px;
+    }
+
+    .ns-subheader {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      color: darken($text-light, 40%);
+      margin: 0;
+      display: block;
+      font-size: 34px;
+    }
+  }
+
+  .ns-socials {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    padding-top: 15px;
+    position: relative;
+
+    .ns-social-link {
+      color: $text-light;
+      text-decoration: none;
+      display: inline-block;
+      padding: 0 10px;
+
+      .ns-underline {
+        height: 1px;
+        width: 0%;
+        display: block;
+        background-color: $text-light;
+        transition: width ease 0.3s;
+      }
+
+      &:hover {
+        > .ns-underline {
+          width: 70%;
+        }
+      }
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .ns-home .ns-info {
+    .ns-header {
+      font-size: 90px;
+    }
+
+    .ns-subheader {
+      font-size: 40px;
+    }
+  }
+}

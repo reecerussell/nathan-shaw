@@ -1,0 +1,107 @@
+.ns-navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .ns-portfolio {
+    margin: 0;
+    color: $text-light;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+  }
+
+  .ns-nav-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1 1;
+    justify-self: center;
+    text-align: center;
+
+    .ns-nav-item {
+      display: inline-block;
+
+      .ns-nav-link {
+        display: block;
+        padding: 0 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 28px;
+        color: $text-light;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        .ns-underline {
+          height: 1px;
+          width: 0%;
+          display: block;
+          background-color: $text-light;
+          transition: width ease 0.3s;
+        }
+
+        &:hover {
+          > .ns-underline {
+            width: 70%;
+          }
+        }
+      }
+
+      &:first-of-type > .ns-nav-link {
+        padding-left: 0;
+      }
+
+      &:last-of-type > .ns-nav-link {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .ns-menu-btn {
+    outline: 0;
+    border: 0;
+    background: none;
+    width: 50px;
+    padding: 10px 0 10px 10px;
+
+    .ns-menu-line {
+      display: block;
+      height: 2.5px;
+      width: 100%;
+      background-color: $text-light;
+      margin-top: 7px;
+      transition: width ease 0.3s, margin ease 0.3s;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:nth-child(2) {
+        width: 80%;
+        margin-left: 20%;
+      }
+    }
+
+    &:hover > .ns-menu-line,
+    &:active > .ns-menu-line {
+      &:first-of-type,
+      &:last-of-type {
+        width: 80%;
+        margin-left: 20%;
+      }
+
+      &:nth-child(2) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+
+    &:active {
+      background-color: darken($text-light, 70%);
+      padding: 10px;
+      margin-right: -10px;
+      width: 60px;
+    }
+  }
+}
