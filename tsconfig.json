@@ -29,7 +29,7 @@
   },
   "include": [
     "src"
-  ],
+, "next.config.js", "server.js"  ],
   "exclude": [
     "node_modules",
     ".vscode"
