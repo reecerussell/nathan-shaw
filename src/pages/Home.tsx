@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import { Navbar, Sidebar } from '../components';
 import { NavProvider } from '../providers/content';
 
@@ -25,6 +26,11 @@ const Home = ({ navItems, url }) => {
 
   return (
     <>
+      <Head>
+        <title>Nathan Shaw - Graphic Designer</title>
+        <meta name="description" content="Nathan Shaw, Grpahic Designer" />
+      </Head>
+
       <section className="ns-section ns-home" onClick={closeSidebar}>
         <Navbar items={navItems} onMenuClick={toggleSidebar} />
 

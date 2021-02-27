@@ -22,7 +22,12 @@ const Navbar: FunctionComponent<Props> = ({ items, onMenuClick }) => (
         </li>
       ))}
     </ul>
-    <button className="ns-menu-btn" type="button" onClick={onMenuClick}>
+    <button
+      className="ns-menu-btn"
+      type="button"
+      onClick={onMenuClick}
+      aria-label="Toggle Menu"
+    >
       <span className="ns-menu-line" />
       <span className="ns-menu-line" />
       <span className="ns-menu-line" />
