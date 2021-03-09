@@ -28,7 +28,7 @@ const Home = ({ navItems, url }) => {
     <>
       <Head>
         <title>Nathan Shaw - Graphic Designer</title>
-        <meta name="description" content="Nathan Shaw, Grpahic Designer" />
+        <meta name="description" content="Nathan Shaw, Graphic Designer" />
       </Head>
 
       <section className="ns-section ns-home" onClick={closeSidebar}>
