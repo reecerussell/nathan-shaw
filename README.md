@@ -45,7 +45,6 @@ To run the terraform locally you will need to create a file called `local.tfvars
 
 AWS_ACCESS_KEY = "<aws access key>"
 AWS_SECRET_KEY = "<aws secret key>"
-DOMAIN_NAME = "<domain>"
 ```
 
 Then you can plan the terraform by running the command below in the `/infra` directory.
