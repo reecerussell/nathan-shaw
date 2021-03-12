@@ -11,6 +11,9 @@ jobs:
   terraform:
     name: Terraform
     runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -20,7 +23,6 @@ jobs:
 
       - name: Setup AWS Credentials
         run: |
-          touch ~/.aws/credentials
           echo -e "[default]\n\
           \raws_access_key_id=$ACCESS_ID\n\
           \raws_secret_access_key=$SECRET_KEY" \
