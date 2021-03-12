@@ -6,8 +6,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "portfolio-terraform-state"
-    key    = "portfolio.tfstate"
-    region = "eu-west-2"
+    bucket                  = "portfolio-terraform-state"
+    key                     = "portfolio.tfstate"
+    region                  = "eu-west-2"
+    shared_credentials_file = "~/.aws/credentials"
   }
 }
