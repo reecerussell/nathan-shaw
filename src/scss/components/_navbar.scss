@@ -47,7 +47,8 @@
           transition: width ease 0.3s;
         }
 
-        &:hover {
+        &:hover,
+        &.ns-active {
           > .ns-underline {
             width: 70%;
           }
