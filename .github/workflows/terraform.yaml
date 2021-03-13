@@ -22,11 +22,12 @@ jobs:
         uses: hashicorp/setup-terraform@v1
 
       - name: Setup AWS Credentials
+        working-directory: infra
         run: |
           sudo echo -e "[default]\n\
             \raws_access_key_id=$ACCESS_ID\n\
             \raws_secret_access_key=$SECRET_KEY" \
-            > infra/aws-credentials
+            > aws-credentials
         env:
           ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
           SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
