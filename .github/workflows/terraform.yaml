@@ -24,8 +24,8 @@ jobs:
       - name: Setup AWS Credentials
         working-directory: infra
         run: |
-          sudo echo -e "[default]\n\
-            \raws_access_key_id=$ACCESS_ID\n\
+          sudo echo -e "[default]\
+            \raws_access_key_id=$ACCESS_KEY\
             \raws_secret_access_key=$SECRET_KEY" \
             > aws-credentials
         env:
