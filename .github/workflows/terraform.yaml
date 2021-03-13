@@ -27,9 +27,11 @@ jobs:
 
       - name: Init
         working-directory: infra
-        run: terraform init \
-          -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY }}" \
-          -backend-config="secret_key=${{ secrets.AWS_SECRET_KEY }}"
+        run: |
+          terraform init \
+            -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY }}" \
+            -backend-config="secret_key=${{ secrets.AWS_SECRET_KEY }}" \
+            .
 
       - name: Plan
         working-directory: infra
