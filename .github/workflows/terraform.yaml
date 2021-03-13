@@ -38,9 +38,7 @@ jobs:
 
       - name: Init
         working-directory: infra
-        run: |
-          cat aws-credentials
-          terraform init
+        run: terraform init
 
       - name: Plan
         working-directory: infra
