@@ -9,6 +9,6 @@ terraform {
     bucket                  = "portfolio-terraform-state"
     key                     = "portfolio.tfstate"
     region                  = "eu-west-2"
-    shared_credentials_file = "~/.aws/credentials"
+    shared_credentials_file = "aws-credentials"
   }
 }
