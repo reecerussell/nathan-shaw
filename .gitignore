@@ -4,3 +4,4 @@ dist
 
 infra/.terraform
 infra/local.tfvars
+infra/aws-credentials
