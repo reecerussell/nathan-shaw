@@ -3,9 +3,13 @@ name: "Terraform"
 on:
   workflow_dispatch:
   pull_request:
+    paths:
+      - "infra/*.tf"
   push:
     branches:
       - master
+    paths:
+      - "infra/*.tf"
 
 jobs:
   terraform:

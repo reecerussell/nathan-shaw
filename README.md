@@ -22,13 +22,16 @@ This is a portfolio website for Nathan Shaw.
       - **[Component].tsx** - component
       - **[OtherComponent].tsx** - supporting component
       - **index.ts** - exports component(s)
+  - **models/** - contains model definitions
   - **scss/** - contains all style sheets
+    - **components/** - contains component specific styles
+    - **views/** - contains view specific styles
     - **styles.scss** - SCSS entrypoint
     - **\_variables.scss** - contains global SCSS variables
     - **\_fonts.scss** - contains font definitions and imports
     - **\_[myStyle].scss** - convention for sub-stylesheets
   - **App.tsx** - the main App component
-  - **index.ts** - the app entrypoint
+  - **index.tsx** - the app entrypoint
   - **routes.ts** - contains the routes for each view component
   - **\_content.ts** - contains static content
 

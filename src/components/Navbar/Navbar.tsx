@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import Link from 'next/link';
-import { NavItem } from '../models';
+import { Link } from 'react-router-dom';
+import { NavItem } from '../../models';
 
 interface Props {
   items: NavItem[];
@@ -10,14 +10,12 @@ interface Props {
 const Navbar: FunctionComponent<Props> = ({ items, onMenuClick }) => (
   <header className="ns-navbar">
     <h4 className="ns-portfolio">Portfolio</h4>
-    <ul className="ns-nav-items" role="nav">
+    <ul className="ns-nav-items" role="navigation">
       {items.map((item, key) => (
         <li className="ns-nav-item" key={key}>
-          <Link href={item.url}>
-            <a className="ns-nav-link" target={item.target}>
-              {item.text}
-              <span className="ns-underline" />
-            </a>
+          <Link to={item.url} target={item.target} className="ns-nav-link">
+            {item.text}
+            <span className="ns-underline" />
           </Link>
         </li>
       ))}

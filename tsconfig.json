@@ -8,7 +8,7 @@
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": ".",
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "lib": [
       "dom",
       "dom.iterable",
@@ -21,11 +21,8 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "paths": {
-      "*": [
-        "node_modules/*"
-      ]
-    }
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"
