@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
-import { Navbar, Sidebar } from '../components';
-import { NavProvider } from '../providers/content';
+import { useState, useEffect, FunctionComponentElement } from 'react';
+import { useLocation } from 'react-router-dom';
+import { NavItem } from '../../../models';
+import { Navbar, Sidebar, withContent } from '../..';
 
-const Home = ({ navItems, url }) => {
+interface Props {
+  navItems: NavItem[];
+}
+
+const Home = ({ navItems }): FunctionComponentElement<Props> => {
+  const { pathname } = useLocation();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     setSidebarOpen(false);
-  }, [url]);
+  }, [pathname]);
 
   const toggleSidebar = e => {
     e.preventDefault();
@@ -26,11 +31,6 @@ const Home = ({ navItems, url }) => {
 
   return (
     <>
-      <Head>
-        <title>Nathan Shaw - Graphic Designer</title>
-        <meta name="description" content="Nathan Shaw, Graphic Designer" />
-      </Head>
-
       <section className="ns-section ns-home" onClick={closeSidebar}>
         <Navbar items={navItems} onMenuClick={toggleSidebar} />
 
@@ -58,11 +58,5 @@ const Home = ({ navItems, url }) => {
   );
 };
 
-Home.getInitialProps = async function () {
-  const provider = new NavProvider();
-  const items = await provider.get();
-
-  return { navItems: items };
-};
-
-export default Home;
+export default withContent(Home);
+export type { Props };

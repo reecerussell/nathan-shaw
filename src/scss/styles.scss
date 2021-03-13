@@ -1,8 +1,9 @@
 @import 'variables';
+@import 'fonts';
+@import 'section';
 
-@import 'common/common';
 @import 'components/components';
-@import 'pages/pages';
+@import 'views/views';
 
 html,
 body {

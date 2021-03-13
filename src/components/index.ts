@@ -1,4 +1,6 @@
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 
-export { Navbar, Sidebar };
+import withContent from './withContent';
+
+export { Navbar, Sidebar, withContent };

@@ -1,6 +1,6 @@
 .ns-home {
   background-color: #000;
-  background-image: url(../../../public/assets/landing_background_small.png);
+  background-image: url('../../assets/landing_background_small.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: 100px;
@@ -95,7 +95,7 @@
 
 @media (min-width: 660px) {
   .ns-home {
-    background-image: url(../../../public/assets/landing_background_medium.png);
+    background-image: url('../../assets/landing_background_medium.png');
 
     .ns-info {
       padding-top: 20vh;
@@ -105,7 +105,7 @@
 
 @media (min-width: 1050px) {
   .ns-home {
-    background-image: url(../../../public/assets/landing_background.png);
+    background-image: url('../../assets/landing_background.png');
 
     .ns-info {
       padding-top: 25vh;
