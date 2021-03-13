@@ -11,36 +11,42 @@ jobs:
   terraform:
     name: Terraform
     runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Setup
         uses: hashicorp/setup-terraform@v1
-      
+
       - name: Format
         working-directory: infra
         run: terraform fmt -check
 
       - name: Init
         working-directory: infra
-        run: terraform init
+        run: |
+          terraform init \
+            -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY }}" \
+            -backend-config="secret_key=${{ secrets.AWS_SECRET_KEY }}" \
+            .
 
       - name: Plan
         working-directory: infra
-        run: terraform plan
-        env:
-          TF_AWS_REGION: eu-west-2
-          TF_AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-          TF_AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
-          TF_DOMAIN_NAME: nathanshaw.uk
+        timeout-minutes: 1
+        run: |
+          terraform plan \
+            -var="AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }}" \
+            -var="AWS_SECRET_KEY=${{ secrets.AWS_SECRET_KEY }}"
 
       - name: Apply
         if: (github.ref == 'refs/heads/master' && github.event_name == 'push') || github.event_name == 'workflow_dispatch'
         working-directory: infra
-        run: terraform apply
-        env:
-          TF_AWS_REGION: eu-west-2
-          TF_AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-          TF_AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
-          TF_DOMAIN_NAME: nathanshaw.uk
+        timeout-minutes: 5
+        run: |
+          terraform apply \
+            -var="AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }}" \
+            -var="AWS_SECRET_KEY=${{ secrets.AWS_SECRET_KEY }}" \
+            -auto-approve
