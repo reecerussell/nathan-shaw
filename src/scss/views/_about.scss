@@ -1,5 +1,8 @@
 .ns-about {
-  background-image: url('../../assets/about_background_large.png');
+  background-image: url('../../assets/about_background_xsmall.png');
+  background-position-x: -70px;
+  background-position-y: 50px;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
 
@@ -27,7 +30,7 @@
         font-family: 'Montserrat', sans-serif;
         font-weight: 300;
         color: $text-light;
-        font-size: 20px;
+        font-size: 14px;
       }
     }
 
@@ -78,5 +81,62 @@
         }
       }
     }
+  }
+}
+
+@media (min-width: 400px) {
+  .ns-about {
+    background-position-x: 0;
+    background-position-y: 50px;
+  }
+}
+
+@media (min-width: 600px) {
+  .ns-about {
+    background-position-x: 100px;
+    background-image: url('../../assets/about_background_small.png');
+
+    .ns-content .ns-info .ns-description {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .ns-about {
+    background-position-x: 100px;
+
+    .ns-content .ns-info .ns-description {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 850px) {
+  .ns-about {
+    background-image: url('../../assets/about_background_medium.png');
+    background-position-x: -50px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .ns-about {
+    background-position-x: 150px;
+
+    .ns-content .ns-info .ns-description {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .ns-about {
+    background-position-x: 250px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .ns-about {
+    background-image: url('../../assets/about_background_large.png');
   }
 }
