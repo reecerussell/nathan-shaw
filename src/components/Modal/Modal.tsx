@@ -10,7 +10,9 @@ interface CloseFunc {
 }
 
 const Modal: FunctionComponent<ModalProps> = ({ open, onClose, children }) => {
-  const handleClose = (): void => {
+  const handleClose = (e: any): void => {
+    e.stopPropagation();
+
     if (!open) {
       return;
     }
@@ -25,9 +27,12 @@ const Modal: FunctionComponent<ModalProps> = ({ open, onClose, children }) => {
   }
 
   return (
-    <div className="ns-modal" onClick={handleClose}>
-      <div className="ns-modal-content">{children}</div>
-    </div>
+    <>
+      <div className="ns-modal">
+        <div className="ns-modal-overlay" onClick={handleClose} />
+        <div className="ns-modal-content">{children}</div>
+      </div>
+    </>
   );
 };
 
