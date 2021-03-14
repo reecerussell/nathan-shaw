@@ -12,7 +12,10 @@ const Home = ({ navItems }): FunctionComponentElement<Props> => {
 
   return (
     <>
-      <section className="ns-section ns-home" onClick={closeSidebar}>
+      <section
+        className="ns-section ns-fullscreen-view ns-home"
+        onClick={closeSidebar}
+      >
         <Navbar items={navItems} onMenuClick={toggleSidebar} />
 
         <div className="ns-info">

@@ -1,16 +1,9 @@
 .ns-home {
-  background-color: #000;
   background-image: url('../../assets/landing_background_small.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-y: 100px;
-  padding: 25px;
-  width: calc(100% - 50px);
-  min-height: calc(100vh - 50px);
-  max-height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
   justify-items: left;
+  max-height: calc(100vh - 50px);
 
   .ns-navbar {
     align-self: flex-start;

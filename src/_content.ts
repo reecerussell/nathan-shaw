@@ -5,12 +5,12 @@ const content: Content = {
     {
       text: 'Home',
       target: '_self',
-      url: '/Home',
+      url: '/',
     },
     {
       text: 'About Me',
       target: '_self',
-      url: '/About',
+      url: '/about',
     },
     {
       text: 'Education',
@@ -23,6 +23,33 @@ const content: Content = {
       url: '/Contact',
     },
   ],
+  about: {
+    carousel: {
+      maxItems: 3,
+      items: [
+        {
+          src: '/assets/carousel/one.JPEG',
+          alt: 'one',
+        },
+        {
+          src: '/assets/carousel/two.JPG',
+          alt: 'two',
+        },
+        {
+          src: '/assets/carousel/three.JPG',
+          alt: 'three',
+        },
+        {
+          src: '/assets/carousel/four.JPG',
+          alt: 'four',
+        },
+        {
+          src: '/assets/carousel/five.JPG',
+          alt: 'five',
+        },
+      ],
+    },
+  },
 };
 
 export default content;
