@@ -1,5 +1,10 @@
+$about-background-xsmall: url('../../assets/about_background_xsmall.webp');
+$about-background-small: url('../../assets/about_background_small.webp');
+$about-background-medium: url('../../assets/about_background_medium.webp');
+$about-background-large: url('../../assets/about_background_large.webp');
+
 .ns-about {
-  background-image: url('../../assets/about_background_xsmall.png');
+  background-image: $about-background-xsmall;
   background-position-x: -70px;
   background-position-y: 50px;
   background-attachment: fixed;
@@ -94,7 +99,7 @@
 @media (min-width: 600px) {
   .ns-about {
     background-position-x: 100px;
-    background-image: url('../../assets/about_background_small.png');
+    background-image: $about-background-small;
 
     .ns-content .ns-info .ns-description {
       font-size: 16px;
@@ -114,7 +119,7 @@
 
 @media (min-width: 850px) {
   .ns-about {
-    background-image: url('../../assets/about_background_medium.png');
+    background-image: $about-background-medium;
     background-position-x: -50px;
   }
 }
@@ -137,6 +142,6 @@
 
 @media (min-width: 1600px) {
   .ns-about {
-    background-image: url('../../assets/about_background_large.png');
+    background-image: $about-background-large;
   }
 }

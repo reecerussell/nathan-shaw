@@ -4,11 +4,10 @@ import classNames from 'classnames';
 import { NavItem as NavItemModel } from '../../models';
 
 interface Props {
-  key?: number | string;
   item: NavItemModel;
 }
 
-const NavItem: FunctionComponent<Props> = ({ key, item }) => {
+const NavItem: FunctionComponent<Props> = ({ item }) => {
   const { pathname } = useLocation();
   const isActive = item.url.toLowerCase() === pathname.toLowerCase();
 
@@ -17,7 +16,7 @@ const NavItem: FunctionComponent<Props> = ({ key, item }) => {
   });
 
   return (
-    <li className="ns-nav-item" key={key}>
+    <li className="ns-nav-item">
       <Link to={item.url} target={item.target} className={classes}>
         {item.text}
         <span className="ns-underline" />
